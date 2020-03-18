@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 $(call inherit-product, device/sony/rhine/device.mk)
 $(call inherit-product, vendor/sony/honami/honami-vendor.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
+    
 PRODUCT_NAME := aosp_g8341
 PRODUCT_DEVICE := poplar
 PRODUCT_MODEL := Xperia XZ1 (AOSP)
