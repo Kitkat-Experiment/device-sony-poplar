@@ -12,12 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_KERNEL_CONFIG := aosp_yoshino_poplar_defconfig
+TARGET_PREBUILT_KERNEL := kernel
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/$(TARGET_PREBUILT_KERNEL):kernel
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/poplar/device.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
+$(call inherit-product, device/sony/rhine/device.mk)
+$(call inherit-product, vendor/sony/honami/honami-vendor.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_NAME := aosp_g8341
 PRODUCT_DEVICE := poplar
